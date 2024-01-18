@@ -1,9 +1,11 @@
-list_players = ["Маша", "Петя", "Саша", "Оля", "Кирилл", "Коля"]
+# TODO Найдите количество книг, которое можно разместить на дискете
+disk_size = int(1.44 * 1024 * 1024) # размер дискеты в байтах
+book_pages = 100
+lines_per_page = 50
+chars_per_line = 25
+bytes_per_char = 4
 
-# TODO Разделите участников на две команды
-total_players = len(list_players)
-middle_index = total_players // 2
-left_team = list_players[:middle_index]
-right_team = list_players[middle_index:]
-print(left_team)
-print(right_team)
+book_size = book_pages * lines_per_page * chars_per_line * bytes_per_char  # размер одной книги в байтах
+num_books = disk_size // book_size  # количество книг
+
+print("Количество книг, помещающихся на дискету:", num_books)
